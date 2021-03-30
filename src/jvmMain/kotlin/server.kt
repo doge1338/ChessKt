@@ -1,4 +1,3 @@
-
 import game.PlayerConnection
 import game.game
 import io.ktor.application.*
@@ -15,11 +14,20 @@ import kotlinx.coroutines.async
 import matchmaker.Matchmaker
 import util.Logger
 
-fun main() {
+fun main(args: Array<String>) {
+	var host = "127.0.0.1"
+	var port = 8080
+	if (args.isNotEmpty()) {
+		val hostArg = args[0].split(':')
+		require(hostArg.size == 2) { "Malformed host argument: $hostArg" }
+		host = hostArg[0]
+		port = hostArg[1].toIntOrNull() ?: throw Error("Malformed host argument: $hostArg")
+	}
+	
 	embeddedServer(
 		Netty,
-		host = "0.0.0.0",
-		port = 8080,
+		host = host,
+		port = port,
 	) {
 		install(WebSockets)
 		

@@ -12,4 +12,6 @@ To generate a .jar file use:
 ./gradlew shadowJar
 ```
 
-By default, the server will run on 0.0.0.0:8080, you can change that in the server.kt file
+By default, the server will run on 127.0.0.1:8080, you can change that by adding a host:port argument while running 
+the server (i.e. `java -jar build.jar example.com:1337`)
+
