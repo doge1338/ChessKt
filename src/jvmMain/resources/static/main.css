@@ -1,0 +1,194 @@
+body {
+    background: #242424;
+    color: #FAFAFA;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+#content {
+    position: absolute;
+    top: 5%;
+}
+
+table.chessboard {
+    border: solid #FAFAFA 2px;
+    border-spacing: 0;
+}
+
+table.chessboard td.cell-white {
+    background: #FAFAFA;
+}
+table.chessboard td.cell-black {
+    background: darkslategrey;
+}
+
+table.chessboard td {
+    width: 7.5vh;
+    height: 7.5vh;
+
+    transition: all 0.1s;
+}
+
+/*td.piece.friend {
+    cursor: pointer;
+}*/
+td.last-moved {
+    box-shadow: inset 0 0 10px 5px cornflowerblue;
+}
+td.piece-selected {
+    box-shadow: inset 0 0 10px 5px darkturquoise;
+    cursor: default !important;
+}
+td.selected-movable-to {
+    box-shadow: inset 0 0 10px 5px darkturquoise !important;
+    cursor: pointer;
+}
+td.movable-to {
+    box-shadow: inset 0 0 10px 3px turquoise;
+}
+
+#mainLabel {
+    margin-bottom: 45px;
+    font-size: 1.3em;
+    text-align: center;
+    font-weight: 700;
+}
+#mainLabel a {
+    color: #FAFAFA;
+}
+
+#gameContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#chat {
+    margin: 0 0 0 20px;
+    width: 40vh;
+    border: solid #FAFAFA60 1px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+#chatbox {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    max-height: calc(60vh - 71px);
+    overflow-x: hidden;
+}
+#chatInput {
+    display: flex;
+    margin-top: 20px;
+}
+#chatInput input {
+    width: 100%;
+    flex-grow: 1;
+    background: none;
+    border: none;
+    border-bottom: solid #FAFAFA60 1px;
+    color: #FAFAFA;
+    padding: 5px;
+    margin-right: 15px;
+}
+#chatInput input:focus {
+    outline: none;
+    border-bottom-color: #FAFAFA;
+}
+#chatInput .material-icons {
+    cursor: pointer;
+}
+
+.chatElement {
+    background: #272727;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.chatElementAuthor {
+    border-bottom: solid #fafafa60 1px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    font-weight: 700;
+}
+.chatElementMessage {
+
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+::-webkit-scrollbar-thumb {
+    border-right: solid #272727 10px;
+}
+
+table.chessboard td.wp {
+    background-image: url("pieces/wp.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+table.chessboard td.wr {
+    background-image: url("pieces/wr.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+table.chessboard td.wk {
+    background-image: url("pieces/wk.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+table.chessboard td.wb {
+    background-image: url("pieces/wb.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+table.chessboard td.wq {
+    background-image: url("pieces/wq.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+table.chessboard td.wn {
+    background-image: url("pieces/wn.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+table.chessboard td.bp {
+    background-image: url("pieces/bp.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+table.chessboard td.br {
+    background-image: url("pieces/br.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+table.chessboard td.bk {
+    background-image: url("pieces/bk.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+table.chessboard td.bb {
+    background-image: url("pieces/bb.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+table.chessboard td.bq {
+    background-image: url("pieces/bq.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+table.chessboard td.bn {
+    background-image: url("pieces/bn.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

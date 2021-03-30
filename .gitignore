@@ -1,0 +1,5 @@
+.gradle/
+.idea/
+build/
+src/jvmMain/resources/static/main.js
+src/jvmMain/resources/static/main.js.map
