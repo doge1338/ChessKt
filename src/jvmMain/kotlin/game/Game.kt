@@ -106,7 +106,6 @@ class Game(
 			// This shouldn't happen unless the player messes with the source code trying to send invalid moves
 			// In that case just ignore the message
 			if (state == ChessGame.GameState.ILLEGAL_MOVE) {
-				
 				continue
 			}
 			player(game.currentPlayer).sendMessage(move)
@@ -132,6 +131,7 @@ fun game(gameId: String): (HTML.() -> Unit)? {
 			link(href = "https://fonts.gstatic.com", rel = "preconnect")
 			link(href = "https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap", rel = "stylesheet")
 			link(href = "https://fonts.googleapis.com/icon?family=Material+Icons", rel = "stylesheet")
+			meta("viewport", "width=device-width, initial-scale=1.0")
 			script(src = "/static/main.js") {
 				attributes["game-id"] = gameId
 				if (!game.isPending) {

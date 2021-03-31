@@ -60,7 +60,7 @@ td.movable-to {
 
 #gameContent {
     display: flex;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
     justify-content: center;
 }
 
@@ -113,9 +113,6 @@ td.movable-to {
     margin-bottom: 5px;
     padding-bottom: 5px;
     font-weight: 700;
-}
-.chatElementMessage {
-
 }
 
 a {
@@ -191,4 +188,14 @@ table.chessboard td.bn {
     background-image: url("pieces/bn.svg");
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+@media only screen and (max-width: 1024px) {
+    #mainLabel {
+        font-size: 1.3em;
+        margin-bottom: 30px;
+    }
+    #chat {
+        display: none;
+    }
 }
