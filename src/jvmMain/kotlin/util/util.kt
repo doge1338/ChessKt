@@ -17,14 +17,14 @@ fun FlowOrPhrasingContent.materialIcon(name: String, vararg classes: String) =
 class Interval(dur: Duration, fn: suspend Interval.() -> Unit) {
 	var iteration = 0
 		private set
-	var invalid = false
+	var hasEnded = false
 		private set
-	fun stop() { invalid = true }
+	fun stop() { hasEnded = true }
 	init {
 		rust {
 			while (true) {
 				delay(dur)
-				if (invalid) {
+				if (hasEnded) {
 					break
 				}
 				fn()

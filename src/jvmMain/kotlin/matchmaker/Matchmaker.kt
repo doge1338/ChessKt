@@ -10,7 +10,6 @@ import util.Interval
 import util.Logger
 import util.rotate
 import util.rust
-import java.util.concurrent.atomic.AtomicInteger
 import kotlin.random.Random
 import kotlin.time.TimeSource
 import kotlin.time.seconds
@@ -105,11 +104,11 @@ object Matchmaker {
 	}
 	
 	// I don't think there'll be any more than 65k games at once
-	var ctr: AtomicInteger = AtomicInteger(Random.nextInt().toShort().toInt())
+	var ctr = Random.nextInt().toShort().toInt()
 	@Synchronized
 	fun createPendingGame(): String {
-		val code = (ctr.getAndIncrement()).toShort().rotate()
-		ctr.set(ctr.get() and 0xffff)
+		val code = (ctr++).toShort().rotate()
+		ctr = ctr and 0xffff
 		synchronized(waitingGames) {
 			waitingGames[code] = WaitingGame(code)
 		}

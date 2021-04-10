@@ -155,20 +155,20 @@ class Buffer {
 	fun readBoolean() = readByte() != 0.toByte()
 	
 	// Writes n null bytes to the buffer
-	fun writeNullBytes(n: Int) {
-		ensureCapacity(n)
-		repeat(n) {
-			buf[pointer++] = 0
-		}
-	}
-	// Skips n bytes in the buffer
-	fun ignoreBytes(n: Int) {
-		assertCapacity(n)
-		pointer += n
-	}
-	// Jumps to a position in the buffer
-	fun jumpTo(ptr: Int) {
-		require(ptr in 0 until capacity)
-		pointer = ptr
-	}
+//	fun writeNullBytes(n: Int) {
+//		ensureCapacity(n)
+//		repeat(n) {
+//			buf[pointer++] = 0
+//		}
+//	}
+//	// Skips n bytes in the buffer
+//	fun ignoreBytes(n: Int) {
+//		assertCapacity(n)
+//		pointer += n
+//	}
+//	// Jumps to a position in the buffer
+//	fun jumpTo(ptr: Int) {
+//		require(ptr in 0 until capacity)
+//		pointer = ptr
+//	}
 }

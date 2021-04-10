@@ -2,15 +2,8 @@ package chess
 
 class ChessGame(val debug: Boolean = false) {
 	val board = ChessBoard()
-	private val whiteKing = board.pieceAt('e', 1) as ChessPiece.King
-	private val blackKing = board.pieceAt('e', 8) as ChessPiece.King
-	
 	var currentPlayer = ChessColour.WHITE
 		private set
-	val currentKing get() = when (currentPlayer) {
-		ChessColour.WHITE -> whiteKing
-		ChessColour.BLACK -> blackKing
-	}
 	
 	enum class GameState {
 		ILLEGAL_MOVE,

@@ -1,7 +1,6 @@
 package game
 
 import Message
-import chess.ChessColour
 import io.ktor.http.cio.websocket.*
 import io.ktor.websocket.*
 import kotlinx.coroutines.channels.Channel
@@ -17,10 +16,6 @@ import kotlin.time.seconds
 class PlayerConnection(
 	private val conn: WebSocketServerSession
 ) {
-	var playing = false
-		private set
-	var colour: ChessColour? = null
-		private set
 	var game: Game? = null
 		private set
 	
@@ -141,13 +136,6 @@ class PlayerConnection(
 	
 	suspend fun sendMessage(msg: Message) =
 		conn.outgoing.send(Frame.Binary(true, msg.pack()))
-	
-	fun play(g: Game, c: ChessColour) {
-		require(game == null)
-		game = g
-		colour = c
-		playing = true
-	}
 	
 	suspend fun disconnect() = conn.close()
 }

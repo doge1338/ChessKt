@@ -104,7 +104,6 @@ class ChessBoard {
 		require(a in 'a'..'h' && b in 1..8)
 		return pieceAt(a.toLowerCase()-'a', b-1)
 	}
-	fun hasPieceAt(a: Char, b: Int) = pieceAt(a, b) != null
 	
 	fun movePiece(x: Int, y: Int, nx: Int, ny: Int) {
 		val piece = this[x][y] ?: run {
